@@ -16,7 +16,7 @@ public class ImageService {
         makeImageFolder();
         String imageFullName = generateImageFullName(rawImage);
         saveImageFile(rawImage, imageFullName);
-        return imageFullName;
+        return "https://images.smody.co.kr/images/" + imageFullName;
     }
 
     private void makeImageFolder() {
