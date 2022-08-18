@@ -21,7 +21,8 @@ public class ImageController {
     }
 
     @PostMapping("/images/upload")
-    public ResponseEntity<String> uploadImage(@RequestPart MultipartFile rawImage, @RequestPart String secretKeyUpload) {
+    public ResponseEntity<String> uploadImage(@RequestPart MultipartFile rawImage,
+                                              @RequestPart String secretKeyUpload) {
         if (!this.secretKeyUpload.equals(secretKeyUpload)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
