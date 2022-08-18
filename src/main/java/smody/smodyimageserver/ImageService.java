@@ -13,6 +13,7 @@ public class ImageService {
     public static final String IMAGE_FOLDER_LOCATION = "./images/";
 
     public String uploadImage(MultipartFile rawImage) {
+        makeImageFolder();
         String imageFullName = generateImageFullName(rawImage);
         saveImageFile(rawImage, imageFullName);
         return "https://images.smody.co.kr/images/" + imageFullName;

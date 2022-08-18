@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,7 +21,7 @@ public class ImageController {
     }
 
     @PostMapping("/images/upload")
-    public ResponseEntity<String> uploadImage(@RequestPart MultipartFile rawImage, @RequestParam String secretKeyUpload) {
+    public ResponseEntity<String> uploadImage(@RequestPart MultipartFile rawImage, @RequestPart String secretKeyUpload) {
         if (!this.secretKeyUpload.equals(secretKeyUpload)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
