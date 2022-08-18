@@ -17,7 +17,7 @@ public class Config implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/images/upload")
-                .allowedOrigins("*")
-                .allowedMethods("POST", "GET");
+                .allowedOrigins("https://www.smody.co.kr", "https://test.smody.co.kr")
+                .allowedMethods("POST");
     }
 }
