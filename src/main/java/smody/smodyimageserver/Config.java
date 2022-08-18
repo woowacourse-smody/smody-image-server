@@ -14,10 +14,10 @@ public class Config implements WebMvcConfigurer {
                 .addResourceLocations("file:///home/ubuntu/images/");
     }
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/images/upload")
-                .allowedOrigins("https://wwwxxx.smody.co.kr", "https://testxxx.smody.co.kr")
-                .allowedMethods("POST");
-    }
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//        registry.addMapping("/**")
+//                .allowedOrigins("https://www.smody.co.kr", "https://test.smody.co.kr")
+//                .allowedMethods("POST", "GET");
+//    }
 }
