@@ -13,11 +13,4 @@ public class Config implements WebMvcConfigurer {
         registry.addResourceHandler("/images/**")
                 .addResourceLocations("file:///home/ubuntu/images/");
     }
-
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry) {
-//        registry.addMapping("/**")
-//                .allowedOrigins("https://www.smody.co.kr", "https://test.smody.co.kr")
-//                .allowedMethods("POST", "GET");
-//    }
 }
