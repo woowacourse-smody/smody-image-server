@@ -42,11 +42,11 @@ public class ImageController {
     @GetMapping("/images/{name}")
     public ResponseEntity<FileSystemResource> getImage(@PathVariable String name) throws IOException {
         Path path = new File("/home/ubuntu/images/" + name).toPath();
-//        Path path = new File("/Users/jojogreen/Desktop/" + name).toPath();
         FileSystemResource resource = new FileSystemResource(path);
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(Files.probeContentType(path)))
                 .header("Access-Control-Allow-Origin", "*")
+                .header("Cache-Control", "max-age=31536000")
                 .body(resource);
     }
 }
